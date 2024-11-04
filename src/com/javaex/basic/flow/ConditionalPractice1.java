@@ -30,9 +30,13 @@ public class ConditionalPractice1 {
 		{
 			System.out.print("R303호 입니다.");	
 		}
-		else
+		else if(classNum == 4)
 		{
 			System.out.print("R404호 입니다.");	
+		}
+		else
+		{
+			System.out.print("상담원에게 문의하세요.");
 		}
 		
 		scanner.close();
