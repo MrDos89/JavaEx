@@ -8,7 +8,7 @@ public class ConditionalEx
 	{
 		
 		// TODO Auto-generated method stub
-//		ifEx(scanner);
+//		ifEx();
 		ifEx2();
 	}
 

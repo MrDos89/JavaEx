@@ -88,7 +88,4 @@ public class ConditionalPractice2 {
 		
 		scanner.close();
 	}
-	
-	
-	
 }
