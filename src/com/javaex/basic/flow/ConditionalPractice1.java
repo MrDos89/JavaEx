@@ -34,6 +34,8 @@ public class ConditionalPractice1 {
 		{
 			System.out.print("R404호 입니다.");	
 		}
+		
+		scanner.close();
 	}
 
 }
