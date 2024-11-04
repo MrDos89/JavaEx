@@ -54,6 +54,24 @@ public class ConditionalEx
 			System.out.println("음수입니다.");
 		}
 
+		//중첩 if
+		if (num == 0)
+		{
+			System.out.println("0입니다.");
+		}
+		else
+		{
+			if(num > 0)
+			{
+				System.out.println("양수입니다.");
+			}
+			else
+			{
+				System.out.println("음수입니다.");
+			}
+		}
+		
+		
 		scanner.close();
 	}
 	
