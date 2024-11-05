@@ -126,10 +126,13 @@ public class Practice04 {
 		int value = scanner.nextInt();
 		
 		for (int i = 0; i < wonArray.length; ++i) {
+			
+			//해당 지폐 단위가 몇개 있는지 체크 해서 카운트 배열에 추가 
 			if((value / wonArray[i]) > 0) {
 				wonCountArray[i] = (value / wonArray[i]);
 			}
 			
+			// 다음 지폐 단위를 계산하기 위해 위에 카운트 된 지폐 단위를 뺀 나머지를 기존 변수에 새로 갱신
 			if(value % wonArray[i] != 0) {
 				value = value % wonArray[i];
 			}
@@ -149,27 +152,36 @@ public class Practice04 {
 		boolean isDuplicated = false;
 		boolean isFinished = false;
 		
+		// 로또 번호 6개 다 채울 때까지 돌림
 		while(!isFinished) {
+			//중복체크 초기화
 			isDuplicated = false;
+			// 로또 번호 뽑기 
 			int lottoNum = (int)(Math.random() * 45) + 1;
 			
+			//로또 번호 중복인지 체크
 			for(int i = 0; i < lottoArray.length; ++i) {
 				if(lottoNum == lottoArray[i]) {
+					// 번호 하나라도 중복이면 바로 탈출
 					isDuplicated = true;
 					break;
 				}
 			}
 			
+			// 중복 번호였을 경우 안 채우고 채웠는지 체크하지도 않음
 			if(!isDuplicated)
 			{
+				// 로또 번호 채우자
 				for(int j = 0; j < lottoArray.length; ++j) {
 					if(isEmptyArray[j] == true) {
 						lottoArray[j] = lottoNum;
+						// 로또 번호 찼으니 이 곳은 이제 빈 자리가 아니다.
 						isEmptyArray[j] = false;
 						break;
 					}
 				}
 				
+				// 로또 번호 6개 다 찼나 체크
 				for(int i = 0; i < isEmptyArray.length; ++i) {
 					if(!isEmptyArray[i]) {
 						isFinished = true;
