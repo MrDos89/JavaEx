@@ -185,7 +185,6 @@ public class Practice04 {
 				for(int i = 0; i < isEmptyArray.length; ++i) {
 					if(!isEmptyArray[i]) {
 						isFinished = true;
-						continue;
 					} else {
 						isFinished = false;
 						break;
