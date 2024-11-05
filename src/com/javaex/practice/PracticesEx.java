@@ -19,7 +19,7 @@ public class PracticesEx {
 //		{
 //			
 //		}
-		if (j < 10 ) {
+		if (j < 10) {
 			
 		}
 		switch('A') {

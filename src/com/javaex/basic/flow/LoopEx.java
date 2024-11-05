@@ -9,7 +9,8 @@ public class LoopEx {
 //		whileEx01();
 //		whileEx02();
 //		doWhileEx();
-		forEx();
+//		forEx();
+		randomEx();
 	}
 
 	private static void whileEx01() {
@@ -72,5 +73,17 @@ public class LoopEx {
 		}
 		
 		scanner.close();
+	}
+	
+	private static void randomEx() {
+		int i = 0;
+		
+		while(i < 6) {
+			
+			int num = (int)(Math.random() * 45) + 1;
+			System.out.print(num + "\t");
+			
+			i += 1;
+		}
 	}
 }
