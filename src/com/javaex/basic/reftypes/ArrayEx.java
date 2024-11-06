@@ -7,9 +7,11 @@ public class ArrayEx {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		usingArray();
-		multiDimArrayEx();
-		
+//		usingArray();
+//		multiDimArrayEx();
+//		arrayCopyForEx();
+//		arrayCopySystem();
+		enhancedFor();
 	}
 	
 	private static void usingArray() {
@@ -81,4 +83,62 @@ public class ArrayEx {
 		System.out.print("SUM: " + sum + "\t");
 	}
 
+	private static void arrayCopyForEx() {
+		// 배열은 크기 변경이 안된다
+		// 배열 크기를 변경해야될 땐 새 배열을 생성하고 복사한다
+		int source[] = { 1, 2, 3 };
+		System.out.println("원본: " + Arrays.toString(source));
+		
+		// 7개의 빈 공간이 더 필요
+		int target[] = new int[10];
+		
+		for(int i = 0; i < source.length; ++i) {
+			target[i] = source[i];
+		}
+		
+		System.out.println("복사본: " + Arrays.toString(target));
+	}
+	
+	private static void arrayCopySystem() {
+		// 손쉬운 배열의 복제
+		int[] source = { 1,2,3, };
+		
+		System.out.println("원본: " + Arrays.toString(source));
+		
+		int[] target = new int[10];
+		
+		System.arraycopy(source,			// 원본 배열
+							0, 				// 시작 인덱스
+							target, 		// 타겟 배열
+							0, 				// 타겟 배열의 시작 인덱스
+							source.length);	// 복사열 길이
+		
+		System.out.println("복사본: " + Arrays.toString(target));
+		
+		System.arraycopy(source,			// 원본 배열
+				0, 				// 시작 인덱스
+				target, 		// 타겟 배열
+				3, 				// 타겟 배열의 시작 인덱스
+				source.length);	// 복사열 길이
+
+		System.out.println("복사본 2: " + Arrays.toString(target));
+	}
+	
+	private static void enhancedFor() {
+		int[] nums = { 1,2,3,4,5,6,7,8,9,10 };
+		
+		//일반적인 for문
+		for (int i = 0; i < nums.length; ++i) {
+			System.out.print(nums[i] + "\t");
+		}
+		System.out.println();
+		// Enhanced for:
+		// 카운터 변수, 반복 조건, 증감식 신경쓰지 않고
+		// 손쉽게 컬랙션 데이터(배열 등)를 조작할 수 있음
+		
+		for(int num: nums) {
+			System.out.print(num + "\t");
+		}
+		System.out.println();
+	}
 }
