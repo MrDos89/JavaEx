@@ -1,6 +1,6 @@
 package com.javaex.oop.point.v2;
 
-//v1
+//v2
 class Point {
 	// 필드
 	private int _x;
