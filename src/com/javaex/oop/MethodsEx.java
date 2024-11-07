@@ -5,14 +5,43 @@ public class MethodsEx {
 	// 메서드 작성 연습
 	// 매개 변수 -> 입력, 리턴 -> 출력
 	public static void main(String[] args) {
-		// 매개변수 x, 리턴 x
-		printMessage();
-		// 매개변수 x, 리턴 o
-		System.out.printf("Message : " + getMessage() + "\n");
-		// 매개변수 o, 리턴 x
-		printSum(3, 5);
-		// 매개변수 o, 리턴 o
-		System.out.printf("%f", getSum(3, 5));
+//		// 매개변수 x, 리턴 x
+//		printMessage();
+//		// 매개변수 x, 리턴 o
+//		System.out.printf("Message : " + getMessage() + "\n");
+//		// 매개변수 o, 리턴 x
+//		printSum(3, 5);
+//		// 매개변수 o, 리턴 o
+//		System.out.printf("%f", getSum(3, 5));
+		
+		//매개 변수 개수를 알 수 없을 때의 해결방법
+		// 방법1: 배열을 전달한다.
+		double total = getSumArr(new double[] { 123, 345, 456, 567, 678, });
+		System.out.println(total);
+		
+		// 방법2: 가변인수를 사용
+		double sumResult = getSumVar(123, 345, 456, 567, 678);
+		System.out.println(sumResult);
+	}
+	
+	private static double getSumVar(double... values) {
+		double total = 0;
+		
+		for(double value: values) {
+			total += value;
+		}
+		
+		return total;
+	}
+	
+	private static double getSumArr(double[] values) {
+		double total = 0;
+		
+		for(double value: values) {
+			total += value;
+		}
+		
+		return total;
 	}
 	
 	// 매개변수 x -> 파라미터 없음
