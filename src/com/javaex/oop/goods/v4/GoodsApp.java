@@ -1,15 +1,21 @@
-package com.javaex.oop.goods.v3;
+package com.javaex.oop.goods.v4;
 
-// Goods v3. 생성자
-// 생성자가 만들어져 있지 않으면 JVM이 기본 생성자를 끼워넣는다
-// 만약 개발자가 생성자를 만들면 JVM은 기본생성자를 끼워넣지 않는다.
+//Goods v4. this
+//this -> 현재 인스턴스 자체를 지칭
+//this(...) -> 현재 클래스 내부의 다른 생성자를 지칭
 class Goods {
-	//필드
+	// 필드
 	private String _name;
 	private int _price;
-	//생성자
-	public Goods(String name, int price) {
+	// 생성자
+	public Goods(String name) {
 		this._name = name;
+	}
+	
+	//필수 필드를 생성하는 생성자와 부가적인 필드를 생성하는 생성자를 구분할 때 사용
+	public Goods(String name, int price) {
+//		this._name = name;
+		this(name); // 다른 생성자를 호출
 		this._price = price;
 	}
 	
