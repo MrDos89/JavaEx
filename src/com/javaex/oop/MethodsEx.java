@@ -22,9 +22,17 @@ public class MethodsEx {
 		// 방법2: 가변인수를 사용
 		double sumResult = getSumVar(123, 345, 456, 567, 678);
 		System.out.println(sumResult);
+		
+		//일반 매개 변수와 가변 매개 변수를 함께 사용할 때
+		// 일반 매개변수 먼저, 가변인수 나중에 선언
+		printSum("합산값", 1,2,3,4,5,6,7,8,9);
 	}
 	
-	private static double getSumVar(double... values) {
+	private static void printSum(String message, double ... values) {		
+		System.out.println(message + ":" + getSumVar(values));
+	}
+	
+ 	private static double getSumVar(double ... values) {
 		double total = 0;
 		
 		for(double value: values) {
